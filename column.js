@@ -2,12 +2,12 @@ const XLSX = require("xlsx");
 const { createCanvas, registerFont } = require("canvas");
 const Chart = require("chart.js");
 
-const workbook = XLSX.readFile("data.xlsx");
+const workbook = XLSX.readFile("./data/data.xlsx");
 const worksheet = workbook.Sheets[workbook.SheetNames[0]];
-const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 'A', range: 2, defval: '' });
 
 // 分析具体列名为Column A的数据
-const columnData = jsonData.map((row) => row["Column A"]);
+const columnData = jsonData.map((row) => row['D']);
 
 const frequencyMap = new Map();
 
