@@ -1,5 +1,5 @@
 const XLSX = require("xlsx");
-const { createCanvas, registerFont } = require("canvas");
+const { createCanvas } = require("canvas");
 const Chart = require("chart.js");
 
 const workbook = XLSX.readFile("./data/data.xlsx");
@@ -19,7 +19,7 @@ columnData.forEach((value) => {
   }
 });
 
-registerFont("path/to/your/font.ttf", { family: "Font Family" }); // 注册自定义字体（如果需要）
+console.log('frequencyMap', frequencyMap);
 
 const canvas = createCanvas(800, 600);
 const ctx = canvas.getContext("2d");
